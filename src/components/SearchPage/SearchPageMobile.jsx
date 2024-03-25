@@ -8,11 +8,11 @@ const Comp =()=>{
     }
     
     return(
-        <div className=" flex flex-col items-center border  my-4 px-4">
+        <div className="flex flex-col items-center my-4 px-4">
             
            
             <FontAwesomeIcon onClick={navigator} className="self-start" icon={faArrowLeft} />
-            <h1 className="font-thin ">Search for dishes & restaurants</h1>
+            <h1 className="font-thin">Search for dishes & restaurants</h1>
             
             <input className='border self-start border-gray-300 rounded-lg w-full  my-4 px-4 py-4 cursor-pointer hover:border-orange-300' type="text" placeholder="Search for restaurants and food"/>
             <h1 className="self-start">RECENTLY SEARCHED RESTAURANTS</h1>

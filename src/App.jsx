@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM  from 'react-dom/client';
-import Header from './components/Header/Header';
-
-import SearchPage from './components/SearchPage/SearchPage';
+//import HeaderMain from './components/Header/HeaderMain';
+import SearchPageMobile from './components/SearchPage/SearchPageMobile';
 import Body from './components/Body';
-import Comp from './components/SearchPage/SearchPageMobile';
+
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
-
-
+//import SearchPage from './components/SearchPage/SearchPage';
+import { useMediaQuery } from "react-responsive";
+import HeaderMobile from './components/Header/HeaderMobile';
+import HeaderDesktop from './components/Header/HeaderDesktop';
 const AppLayout = () =>{
-   
-  return(
+  const isMobile = useMediaQuery( {maxWidth:480} );
+  return isMobile?(
+      <div>
+        <HeaderMobile/>
+      </div>
+  ):(
     <div>
-        <Header/>
-        
+      <HeaderDesktop/>
+      <Body/>
+      
     </div>
   )
      
@@ -25,12 +31,12 @@ const appRouter = createBrowserRouter([
         element : <AppLayout />,   
     },
     {
-        path:'/searchpage',
-        element : <SearchPage/>
+        path:'/searchpagemobile',
+        element : <SearchPageMobile />
     },
     {
       path:'/Body',
-      element : <Body/>
+      element : <Body />
     }
    
 ])

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const HeaderMobile = () =>{
     const navigate = useNavigate();
     function navigatorSearchmob(){
-        navigate('/searchpage');
+        navigate('/searchpagemobile');
     };
     function navigatorLocation(){
         navigate('/Body');
