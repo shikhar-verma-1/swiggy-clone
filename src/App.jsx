@@ -2,23 +2,27 @@ import React from 'react';
 import ReactDOM  from 'react-dom/client';
 //import HeaderMain from './components/Header/HeaderMain';
 import SearchPageMobile from './components/SearchPage/SearchPageMobile';
-import Body from './components/Body';
-
+//import Body from './components/Body';
+import SetLocationMobile from './components/SetLocationPage/SetLocationMobile';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 //import SearchPage from './components/SearchPage/SearchPage';
 import { useMediaQuery } from "react-responsive";
 import HeaderMobile from './components/Header/HeaderMobile';
 import HeaderDesktop from './components/Header/HeaderDesktop';
+import UserPageMobile from './components/UserPage/UserPageMobile';
+import Body from './components/Body/Body';
 const AppLayout = () =>{
   const isMobile = useMediaQuery( {maxWidth:480} );
   return isMobile?(
       <div>
-        <HeaderMobile/>
+        <HeaderMobile />
+        <Body />
       </div>
   ):(
     <div>
-      <HeaderDesktop/>
-      <Body/>
+      <HeaderDesktop />
+      <Body />
+      
       
     </div>
   )
@@ -28,15 +32,23 @@ const AppLayout = () =>{
 const appRouter = createBrowserRouter([
     {
         path: '/',
-        element : <AppLayout />,   
+        element : <AppLayout  />,   
     },
     {
         path:'/searchpagemobile',
         element : <SearchPageMobile />
     },
     {
-      path:'/Body',
-      element : <Body />
+      path: '/setlocationmobile',
+      element : <SetLocationMobile/>
+    },
+    {
+      path: '/userpagemobile',
+      element : <UserPageMobile/>
+    },
+    {
+      path: '/body',
+      element: <Body/>
     }
    
 ])
