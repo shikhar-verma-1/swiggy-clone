@@ -20,7 +20,7 @@ const HeaderMobile = () =>{
     return(
         
         <header >
-            <div className='border border-black px-4 py-4 flex '>
+            <div className='border border-black px-4 py-4 flex  '>
                 <div className='location-details'>
                     <span onClick={navigate_To_SetLocationMobile} className='font-bold'><FontAwesomeIcon icon={faPaperPlane} /> Location <FontAwesomeIcon icon={faAngleDown} /></span>
                     <h3 className=' font-thin text-sm'>Location details</h3>

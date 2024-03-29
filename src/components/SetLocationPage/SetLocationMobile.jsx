@@ -7,7 +7,7 @@ const SearchLocationMobile = () =>{
     const navigate = useNavigate();
     function navigate_To_Home(){
         navigate('/')
-    }
+    };
 
     return (
         <div className="flex flex-col  my-4 px-4">
@@ -20,7 +20,7 @@ const SearchLocationMobile = () =>{
             </div>
            
             
-            <input className='border self-start border-gray-400 rounded-lg w-full  my-4 px-4 py-4 cursor-pointer hover:border-orange-300' type="text" placeholder="Nagpur, Maharashtra etc."/>
+            <input className='border self-start border-gray-400 rounded-lg w-full  my-4 px-4 py-4 cursor-pointer hover:border-orange-300' type="text" placeholder="Nagpur, New Delhi etc."/>
             <h1 className="self-start font-thin ">RECENT SEARCHES</h1>
         </div>
     )
