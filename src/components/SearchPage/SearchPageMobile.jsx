@@ -6,6 +6,7 @@ const SearchPageMobile =()=>{
 
     function navigate_To_Home(){
         navigate('/')
+        
     }
     
     return(
