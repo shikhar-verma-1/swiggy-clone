@@ -1,9 +1,10 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  useState  } from 'react';
+import {   useState  } from 'react';
 import {  useNavigate  } from 'react-router-dom';
 
 import { CITY_COORDINATES_API, CITY_RESTAURANTS_API, DEFAULT_LAT, DEFAULT_LNG } from '../../../utils/constants';
+//import { getCityRestaurantsData } from '../../../utils/hooks/getCItyRestaurantsData';
 
 
 
@@ -14,7 +15,7 @@ const SearchLocationMobile = () =>{
 
     const [city,setcity] = useState("");
     const [locationArr,setlocationArr] = useState([]);
-    const [homePageData,sethomePageData] = useState();
+    
     
   
     const navigate = useNavigate();
@@ -24,43 +25,64 @@ const SearchLocationMobile = () =>{
     
     
     
-    
     function getCityRestaurantsData(city){
 
+          
+            
         let lat="";
         let lng="";
+        let homePageData;
+    
     
         const locationDataObj = {method: 'GET',headers: { 'X-Api-Key': 'b7QYgGFeZ5M8KFp+m1B+ag==dcMMg5LHqGIoRi36'},contentType: 'application/json'}
     
-        const fetchData = async()=>{
-            const locationData = await fetch(CITY_COORDINATES_API + city,locationDataObj)
-            const locationjson = await locationData.json();
+        //const fetchData = async()=>{
+           // const locationData = await fetch(CITY_COORDINATES_API + city,locationDataObj)
+           // const locationjson = await locationData.json();
+           // lat = locationjson[0].latitude;
+           // lng = locationjson[0].longitude;
+           // const resdata = await fetch(CITY_RESTAURANTS_API.replace(DEFAULT_LAT,lat).replace(DEFAULT_LNG,lng))
+            //const resjson = await resdata.json();
+            //return resjson;
+        //}   
+        //fetchData();
 
-            lat = locationjson[0].latitude;
-            lng = locationjson[0].longitude;
-
-            const resdata = await fetch(CITY_RESTAURANTS_API.replace(DEFAULT_LAT,lat).replace(DEFAULT_LNG,lng))
-            const resjson = await resdata.json();
-            sethomePageData(resjson);
-            console.log(homePageData);  
-        }   
-        fetchData(); 
+        fetch(CITY_COORDINATES_API + city ,locationDataObj)
+        .then(res=>res.json())
+        .then(data=>{
+            lat=data[0].latitude;
+            lng=data[0].longitude;
+            
+            fetch(CITY_RESTAURANTS_API.replace(DEFAULT_LAT,lat).replace(DEFAULT_LNG,lng))
+            .then(res=>res.json())
+            .then(data=>{
+                homePageData = data;
+                return homePageData;
+            })
+        })
         
-               
+        
     } 
+    
+    
 
+    
    
     function enter(e){
         if(e.key==="Enter"){
             
            
-            getCityRestaurantsData(city);
+            
+            
+            getCityRestaurantsData(city)
+            
             
             
             
             setlocationArr((prevState)=>{
                 return[...prevState,city]
             });
+            
 
         }
     }
