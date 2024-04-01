@@ -12,13 +12,18 @@ import HeaderDesktop from './components/Header/HeaderDesktop';
 import UserPageMobile from './components/UserPage/UserPageMobile';
 import Body from './components/Body/Body';
 const AppLayout = () =>{
-  const isMobile = useMediaQuery( {maxWidth:480} );
-  return isMobile?(
-      <div>
-        <HeaderMobile />
-        <Body />
-      </div>
-  ):(
+  const isMobile = useMediaQuery( {maxWidth:639} );
+  return isMobile?
+  (
+    <div>
+      <HeaderMobile />
+      <Body />
+    </div>
+  )
+
+  :
+
+  (
     <div>
       <HeaderDesktop />
       <Body />
