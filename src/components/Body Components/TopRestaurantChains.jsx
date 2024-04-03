@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import RestaurantCard from './RestaurantCard';
 
-const TopRestuarantChains = ({topChainsData}) =>{
+const TopRestaurantChains = ({topChainsData}) =>{
 
     const[chainsList,setchainsList] = useState([]);
     const restaurantContainerRef=useRef(null);
@@ -11,7 +11,8 @@ const TopRestuarantChains = ({topChainsData}) =>{
     useEffect(()=>{
         if(topChainsData){
             setchainsList(topChainsData);
-            console.log(topChainsData);
+            console.log(chainsList);
+            
         }
     },[topChainsData]);
   
@@ -40,8 +41,10 @@ const TopRestuarantChains = ({topChainsData}) =>{
                     <FontAwesomeIcon onClick={scroll_right} icon={faArrowRight} className='w-3 h-3 p-2 sm:p-3 bg-gray-200  rounded-[50%] hover:bg-gray-300 hover:text-white cursor-pointer'/>
                 </div>
             </div>
-            <div>
-                {chainsList.map((restaurant)=>{return <RestaurantCard key={restaurant.info.id} restaurantData={restaurant.info}/>})}
+            <div className='flex overflow-hidden scroll-smooth' ref={restaurantContainerRef}>
+                {chainsList.map((restaurant)=>{
+                    return <RestaurantCard key={restaurant.info.id} restaurantData={restaurant.info}/>
+                })}
             </div>
 
         </div>
@@ -49,6 +52,6 @@ const TopRestuarantChains = ({topChainsData}) =>{
 
     );
 
-}
+};
 
-export default TopRestuarantChains;
+export default TopRestaurantChains;

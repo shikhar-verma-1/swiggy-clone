@@ -10,46 +10,45 @@ import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const WOYM = ({elementsData}) =>{
+const WOYM = ({woymData}) =>{
     
-    const[iconList,setIconList] = useState([]);
-    const iconContainerRef=useRef(null);
+    const[itemList,setItemList] = useState([]);
+
+    const itemContainerRef=useRef(null);
   
     useEffect(()=>{
-        if(elementsData){
-            setIconList(elementsData);
-            
-        }
+        if(woymData){
+            setItemList(woymData);  
+        };
 
-    },[elementsData]);
+    },[woymData]);
 
     const scroll_left = () => {
-        if (iconContainerRef.current) {
-            iconContainerRef.current.scrollLeft -= 450;
-            
+        if (itemContainerRef.current) {
+            itemContainerRef.current.scrollLeft -= 450;   
         };
     };
 
     const scroll_right = () => {
-        if (iconContainerRef.current) {
-          iconContainerRef.current.scrollLeft += 450; 
+        if (itemContainerRef.current) {
+          itemContainerRef.current.scrollLeft += 450; 
         };
     };
 
 
     
 
-    const woymElements = iconList.map((element)=>{
+    const woymElements = itemList.map((element)=>{
         return (
             
             
-            <img  key={element.id} className="w-[24%] sm:w-[13%] cursor-pointer" src={WOYM_ICONS_API+element.imageId}/>
+            <img  key={element.id} className="w-[24%] sm:w-[12%] cursor-pointer" src={WOYM_ICONS_API + element.imageId}/>
             
             
         )
     });
     
-    return iconList.length===0? (<WOYMShimmer/>) : (
+    return itemList.length===0? (<WOYMShimmer/>) : (
         <div className="my-4">
             <div className="my-4 flex items-center justify-between">
                 <h1 className="my-2 px-4 font-semibold text-lg sm:text-xl">Shikhar, what's on your mind?</h1>
@@ -61,7 +60,7 @@ const WOYM = ({elementsData}) =>{
                 
             </div>
             
-            <div className=" flex  overflow-hidden scroll-smooth" ref={iconContainerRef} >
+            <div className=" flex  overflow-hidden scroll-smooth" ref={itemContainerRef} >
                 {woymElements}
             </div> 
              

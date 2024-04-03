@@ -10,3 +10,4 @@ export const CITY_RESTAURANTS_API = `https://www.swiggy.com/dapi/restaurants/lis
 export const RESTAURANT_MENU_API = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${DEFAULT_LAT}&lng=${DEFAULT_LNG}&restaurantId=`;
 
 export const WOYM_ICONS_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+export const TOP_CHAINS_ICON_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
