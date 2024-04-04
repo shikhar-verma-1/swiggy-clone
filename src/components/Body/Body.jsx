@@ -3,6 +3,7 @@ import { CITY_RESTAURANTS_API } from "../../../utils/constants";
 import WOYM from "../Body Components/WOYM";
 import TopRestaurantChains from "../Body Components/TopRestaurantChains";
 import CityRestaurants from "../Body Components/CityRestaurants";
+import mockData from "../../../utils/mockData";
 
 
 
@@ -11,7 +12,7 @@ const Body = () => {
 
     
    
-    const[WoymList,setWoymList]=useState(null);
+    const [WoymList,setWoymList]=useState(null);
     const [TopRestaurantChainsList,setTopRestaurantChainsList] = useState(null);
     const [CityRestaurantsList,setCityRestaurantsList] = useState(null);
     
@@ -38,10 +39,15 @@ const Body = () => {
         <div className="h-screen mx-auto sm:max-w-[80%] sm:border-red-700">
             
             <WOYM woymData={WoymList}/>
+
             <hr></hr>
-            <TopRestaurantChains topChainsData={TopRestaurantChainsList}/>
+
+            <TopRestaurantChains topChainsData={TopRestaurantChainsList || mockData}/>
+
             <hr></hr>
+
             <CityRestaurants cityRestaurantsData={CityRestaurantsList}/>
+
             <hr></hr>
             
         </div>

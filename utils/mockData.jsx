@@ -1,4 +1,4 @@
-let resList = [
+let mockData = [
 
     
     {
@@ -766,4 +766,4 @@ let resList = [
     
 ]
 
-export default resList;
+export default mockData;

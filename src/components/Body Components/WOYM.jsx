@@ -18,11 +18,12 @@ const WOYM = ({woymData}) =>{
   
     useEffect(()=>{
         if(woymData){
-            setItemList(woymData);  
+            setItemList(woymData);    
         };
 
     },[woymData]);
 
+   
     const scroll_left = () => {
         if (itemContainerRef.current) {
             itemContainerRef.current.scrollLeft -= 450;   
@@ -42,7 +43,7 @@ const WOYM = ({woymData}) =>{
         return (
             
             
-            <img  key={element.id} className="w-[24%] sm:w-[12%] cursor-pointer" src={WOYM_ICONS_API + element.imageId}/>
+            <img  key={element.id} className="w-[21%] sm:w-[11%] cursor-pointer" src={WOYM_ICONS_API + element.imageId}/>
             
             
         )
@@ -51,7 +52,7 @@ const WOYM = ({woymData}) =>{
     return itemList.length===0? (<WOYMShimmer/>) : (
         <div className="my-4">
             <div className="my-4 flex items-center justify-between">
-                <h1 className="my-2 px-4 font-semibold text-lg sm:text-xl">Shikhar, what's on your mind?</h1>
+                <h1 className="my-2 px-4 font-semibold text-xl sm:text-xl">Shikhar, what's on your mind?</h1>
                 
                 <div className="mr-6 flex items-center gap-4">
                     <FontAwesomeIcon onClick={scroll_left}  icon={faArrowLeft}  className='w-3 h-3 p-2 sm:p-3 bg-gray-200  rounded-[50%] hover:bg-gray-300 hover:text-white cursor-pointer'/>
@@ -60,7 +61,7 @@ const WOYM = ({woymData}) =>{
                 
             </div>
             
-            <div className=" flex  overflow-hidden scroll-smooth" ref={itemContainerRef} >
+            <div className="flex  overflow-hidden scroll-smooth" ref={itemContainerRef} >
                 {woymElements}
             </div> 
              
