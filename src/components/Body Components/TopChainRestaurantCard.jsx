@@ -12,7 +12,7 @@ const TopChainRestaurantCard = ({restaurantData}) =>{
 
         <div className="mx-4">
 
-            <div className="w-[200px] h-[280px] sm:w-[280px] sm:h-[320px] flex flex-col gap-1   hover:scale-95 cursor-pointer">
+            <div className="w-[180px] h-[280px] sm:w-[280px] sm:h-[320px] flex flex-col gap-1  hover:scale-95 cursor-pointer">
                 
                 <div className="w-[100%] h-[75%]">
                     <img className="rounded-lg w-[100%] h-[100%]" src={TOP_CHAINS_ICON_API + cloudinaryImageId}></img>
