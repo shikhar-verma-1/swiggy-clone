@@ -30,7 +30,7 @@ const TopRestaurantChains = ({topChainsData}) =>{
         };
     };
 
-    return(
+    return( chainsList &&
         <div className="my-4">
             <div className="my-4 flex items-center justify-between">
                 <h1 className="my-2 px-4 font-semibold text-xl sm:text-xl">Top restaurant chains in Nagpur</h1>

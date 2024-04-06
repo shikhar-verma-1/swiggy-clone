@@ -1,8 +1,8 @@
 // WOYM = What's on your mind?
 
 import { useEffect, useState ,useRef  } from "react";
-import { WOYM_ICONS_API } from "../../../utils/constants";
-import WOYMShimmer from "../Shimmers/WOYMShimmer";
+import { WOYM_ICONS_API } from "../../../../utils/constants";
+import WOYMShimmer from "../../Shimmers/WOYMShimmer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 

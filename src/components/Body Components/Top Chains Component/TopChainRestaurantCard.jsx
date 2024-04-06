@@ -1,4 +1,4 @@
-import { TOP_CHAINS_ICON_API } from "../../../utils/constants";
+import { TOP_CHAINS_ICON_API } from "../../../../utils/constants";
 
 
 const TopChainRestaurantCard = ({restaurantData}) =>{

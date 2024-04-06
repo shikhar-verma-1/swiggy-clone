@@ -1,4 +1,5 @@
-import { CITY_RESTAURANTS_IMAGES_API } from "../../../utils/constants";
+
+import { CITY_RESTAURANTS_IMAGES_API } from "../../../../utils/constants";
 import { useMediaQuery } from "react-responsive";
 
 const CityRestaurantsCard = ({restaurantData}) =>{
@@ -9,13 +10,13 @@ const CityRestaurantsCard = ({restaurantData}) =>{
 
     
 
-    return isMobile?
+    return ( isMobile?
         (
             <div className="mx-2 my-1">
-                <div className="w-[90%] flex gap-2 hover:scale-[97%] cursor-pointer">
+                <div className="w-[400px] flex gap-2 hover:scale-[97%] cursor-pointer">
                     
                     <img className="rounded-xl w-[28%]" src={CITY_RESTAURANTS_IMAGES_API + cloudinaryImageId}></img>
-                    <div className="px-2 flex flex-col gap-1  w-[70%]">
+                    <div className="px-2 flex flex-col gap-1 w-[95%]">
                         <h3 className="text-xs">Badge</h3>
                         <h1 className="font-semibold text-lg">{name}</h1>
                         <div className="flex items-center gap-1 font-semibold text-sm"><img className="w-4 h-4" src="../../assets/star-rating.png"></img> {avgRating}({totalRatingsString}) - {slaString}</div>
@@ -24,10 +25,12 @@ const CityRestaurantsCard = ({restaurantData}) =>{
                         <h1 className="font-semibold">{costForTwo}</h1>
                     </div>
                 
-
+                
 
                 </div>
             </div>
+
+            
         )
 
         :
@@ -48,8 +51,13 @@ const CityRestaurantsCard = ({restaurantData}) =>{
                 </div>
             
             </div>
+
+            
         
-        );
+        )
+
+        
+    )    
    
 };
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { CITY_RESTAURANTS_API } from "../../../utils/constants";
-import WOYM from "../Body Components/WOYM";
-import TopRestaurantChains from "../Body Components/TopRestaurantChains";
-import CityRestaurants from "../Body Components/CityRestaurants";
+import WOYM from "../Body Components/WOYM Component/WOYM";
+import TopRestaurantChains from "../Body Components/Top Chains Component/TopRestaurantChains";
+import CityRestaurants from "../Body Components/City Restaurants Component/CityRestaurants";
 import mockData from "../../../utils/mockData";
 
 
@@ -36,13 +36,13 @@ const Body = () => {
     
 
     return(
-        <div className="h-screen mx-auto sm:max-w-[80%] sm:border-red-700">
+        <div className="h-screen mx-auto sm:max-w-[80%] sm:border-red-500">
             
             <WOYM woymData={WoymList}/>
 
             <hr></hr>
 
-            <TopRestaurantChains topChainsData={TopRestaurantChainsList || mockData}/>
+            <TopRestaurantChains topChainsData={TopRestaurantChainsList}/>
 
             <hr></hr>
 
