@@ -11,6 +11,7 @@ import HeaderMobile from './components/Header/HeaderMobile';
 import HeaderDesktop from './components/Header/HeaderDesktop';
 import UserPageMobile from './components/UserPage/UserPageMobile';
 import Body from './components/Body/Body';
+import RestaurantPage from './components/Body Components/Restaurant Page/RestaurantPage';
 const AppLayout = () =>{
   const isMobile = useMediaQuery( {maxWidth:639} );
   return isMobile?
@@ -19,44 +20,48 @@ const AppLayout = () =>{
       <HeaderMobile />
       <Body />
     </div>
-  )
-
-  :
-
+  )  
+  :  
   (
     <div>
       <HeaderDesktop />
       <Body />
+   
       
       
     </div>
   )
      
-}
+};
 
 const appRouter = createBrowserRouter([
-    {
-        path: '/',
-        element : <AppLayout  />,   
-    },
-    {
-        path:'/searchpagemobile',
-        element : <SearchPageMobile />
-    },
-    {
-      path: '/setlocationmobile',
-      element : <SetLocationMobile/>
-    },
-    {
-      path: '/userpagemobile',
-      element : <UserPageMobile/>
-    },
-    {
-      path: '/body',
-      element: <Body/>
-    }
+  {
+      path: '/',
+      element : <AppLayout  />,     
+  },
+  {
+      path:'/searchpagemobile',
+      element : <SearchPageMobile />
+  },
+  {
+    path: '/setlocationmobile',
+    element : <SetLocationMobile/>
+  },
+  {
+    path: '/userpagemobile',
+    element : <UserPageMobile/>
+  },
+  {
+    path: '/body',
+    element: <Body/>
+  },
+  {
+    path: '/restaurants/:restaurantID',
+    element: <RestaurantPage/>
+  }
+  
    
-])
+]);
 
 
 

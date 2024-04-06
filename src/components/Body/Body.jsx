@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { CITY_RESTAURANTS_API } from "../../../utils/constants";
-import WOYM from "../Body Components/WOYM Component/WOYM";
-import TopRestaurantChains from "../Body Components/Top Chains Component/TopRestaurantChains";
-import CityRestaurants from "../Body Components/City Restaurants Component/CityRestaurants";
+import WOYM from "../Body Components/WOYM/WOYM";
+import TopRestaurantChains from "../Body Components/Top Chains/TopRestaurantChains";
+import CityRestaurants from "../Body Components/City Restaurants/CityRestaurants";
 import mockData from "../../../utils/mockData";
 
 

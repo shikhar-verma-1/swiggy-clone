@@ -1,6 +1,6 @@
 import { useEffect, useState ,useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +25,7 @@ const CityRestaurants = ({cityRestaurantsData}) =>{
 
         if(cityRestaurantsData){
             setcityRestaurantsList(cityRestaurantsData);
-            setfilteredcityRestaurantsList(cityRestaurantsData);    
+            setfilteredcityRestaurantsList(cityRestaurantsData);   
         }; 
 
     },[cityRestaurantsData]);
@@ -120,7 +120,7 @@ const CityRestaurants = ({cityRestaurantsData}) =>{
             <div className="flex flex-col gap-4 border border-black overflow-hidden  sm:flex-row sm:gap-0 sm:justify-center sm:flex-wrap">
                 
                 {filteredcityRestaurantsList.map((restaurant)=>{
-                    return <CityRestaurantsCard key={restaurant.info.id} restaurantData={restaurant.info}/>
+                    return <Link to={'/restaurants/' + restaurant.info.id} key={restaurant.info.id}><CityRestaurantsCard restaurantData={restaurant.info}/></Link>
                 })};
       
             </div>

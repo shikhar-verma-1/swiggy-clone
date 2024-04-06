@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import TopChainRestaurantCard from './TopChainRestaurantCard';
+import { Link } from 'react-router-dom';
 
 const TopRestaurantChains = ({topChainsData}) =>{
 
@@ -43,7 +44,7 @@ const TopRestaurantChains = ({topChainsData}) =>{
 
             <div className='flex overflow-hidden scroll-smooth' ref={restaurantContainerRef}>
                 {chainsList.map((restaurant)=>{
-                    return <TopChainRestaurantCard key={restaurant.info.id} restaurantData={restaurant.info}/>
+                    return <Link to={'/restaurants/' + restaurant.info.id} key={restaurant.info.id} ><TopChainRestaurantCard restaurantData={restaurant.info}/></Link>
                 })}
             </div>
 
