@@ -120,7 +120,10 @@ const CityRestaurants = ({cityRestaurantsData}) =>{
             <div className="flex flex-col gap-4 border border-black overflow-hidden  sm:flex-row sm:gap-0 sm:justify-center sm:flex-wrap">
                 
                 {filteredcityRestaurantsList.map((restaurant)=>{
-                    return <Link to={'/restaurants/' + restaurant.info.id} key={restaurant.info.id}><CityRestaurantsCard restaurantData={restaurant.info}/></Link>
+                    
+                    return isMobile?
+                    (<Link to={'/restaurants-mobile/' + restaurant.info.id} key={restaurant.info.id}><CityRestaurantsCard restaurantData={restaurant.info}/></Link>):
+                    (<Link to={'/restaurants-desktop/' + restaurant.info.id} key={restaurant.info.id}><CityRestaurantsCard restaurantData={restaurant.info}/></Link>)
                 })};
       
             </div>

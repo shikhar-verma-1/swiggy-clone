@@ -12,3 +12,4 @@ export const RESTAURANT_DATA_API = `https://www.swiggy.com/dapi/menu/pl?page-typ
 export const WOYM_ICONS_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
 export const TOP_CHAINS_ICON_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const CITY_RESTAURANTS_IMAGES_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const ITEM_IMAGES_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";

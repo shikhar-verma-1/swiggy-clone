@@ -3,11 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import TopChainRestaurantCard from './TopChainRestaurantCard';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from "react-responsive";
 
 const TopRestaurantChains = ({topChainsData}) =>{
 
     const[chainsList,setchainsList] = useState([]);
     const restaurantContainerRef=useRef(null);
+
+    
+    const isMobile = useMediaQuery( {maxWidth:639} );
 
     useEffect(()=>{
         if(topChainsData){
@@ -44,7 +48,10 @@ const TopRestaurantChains = ({topChainsData}) =>{
 
             <div className='flex overflow-hidden scroll-smooth' ref={restaurantContainerRef}>
                 {chainsList.map((restaurant)=>{
-                    return <Link to={'/restaurants/' + restaurant.info.id} key={restaurant.info.id} ><TopChainRestaurantCard restaurantData={restaurant.info}/></Link>
+                    return isMobile?
+                    (<Link to={'/restaurants-mobile/' + restaurant.info.id} key={restaurant.info.id} ><TopChainRestaurantCard restaurantData={restaurant.info}/></Link>)
+                    :
+                    (<Link to={'/restaurants-desktop/' + restaurant.info.id} key={restaurant.info.id} ><TopChainRestaurantCard restaurantData={restaurant.info}/></Link>)
                 })}
             </div>
 
