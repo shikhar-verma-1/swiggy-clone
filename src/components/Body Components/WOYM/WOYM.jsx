@@ -1,7 +1,7 @@
 // WOYM = What's on your mind?
 
 import { useEffect, useState ,useRef  } from "react";
-import { WOYM_ICONS_API } from "../../../../utils/constants";
+import { WOYM_ICONS_URL } from "../../../../utils/constants";
 import WOYMShimmer from "../../Shimmers/WOYMShimmer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft , faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -43,7 +43,7 @@ const WOYM = ({woymData}) =>{
         return (
             
             
-            <img  key={element.id} className="w-[21%] sm:w-[11%] cursor-pointer" src={WOYM_ICONS_API + element.imageId}/>
+            <img  key={element.id} className="w-[21%] sm:w-[11%] cursor-pointer" src={WOYM_ICONS_URL + element.imageId}/>
             
             
         )

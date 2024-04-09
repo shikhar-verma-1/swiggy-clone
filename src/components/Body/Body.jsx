@@ -3,7 +3,7 @@ import { CITY_RESTAURANTS_API } from "../../../utils/constants";
 import WOYM from "../Body Components/WOYM/WOYM";
 import TopRestaurantChains from "../Body Components/Top Chains/TopRestaurantChains";
 import CityRestaurants from "../Body Components/City Restaurants/CityRestaurants";
-//import mockData from "../../../utils/mockData";
+import mockData from "../../../utils/mockData";
 
 
 
@@ -42,7 +42,7 @@ const Body = () => {
 
             <hr></hr>
 
-            {TopRestaurantChainsList && <TopRestaurantChains topChainsData={TopRestaurantChainsList}/>}
+            {TopRestaurantChainsList && <TopRestaurantChains topChainsData={TopRestaurantChainsList || mockData}/>}
 
             <hr></hr>
 

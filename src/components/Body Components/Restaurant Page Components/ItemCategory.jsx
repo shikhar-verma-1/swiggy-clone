@@ -12,10 +12,10 @@ const ItemCategory = ({categoryData}) =>{
 
     return(
         <div>
-            <div className='px-4 py-4 flex  gap-1 items-center cursor-pointer' onClick={handleAccordion}>
-                <h1 className='font-semibold'>{categoryData.title}</h1>
-                <h1 className='font-semibold'>({categoryData.itemCards.length})</h1>
-                <FontAwesomeIcon  className={`ml-auto ${ isOpen? "rotate-180" : "rotate-0" }`} icon={faCaretDown} />
+            <div className="px-4 py-4 flex  gap-1 items-center cursor-pointer" onClick={handleAccordion}>
+                <h1 className='font-semibold sm:text-lg'>{categoryData.title}</h1>
+                <h1 className='font-semibold sm:text-lg'>({categoryData.itemCards.length})</h1>
+                <FontAwesomeIcon  className={`ml-auto sm:text-xl ${ isOpen? "rotate-180" : "rotate-0" }`} icon={faCaretDown} />
                 
             </div>
             {isOpen && <Items itemsData={categoryData.itemCards}/>}
