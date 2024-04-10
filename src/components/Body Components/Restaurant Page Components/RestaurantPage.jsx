@@ -4,7 +4,7 @@ import useRestaurantData from "../../../../utils/hooks/useRestaurantData";
 import WOYMShimmer from "../../Shimmers/WOYMShimmer";
 import ItemCategory from "./ItemCategory";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 
 
@@ -27,8 +27,11 @@ const RestaurantPage = () => {
    };
 
 
+
+
     return (
         <div className="sm:max-w-[80%] sm:mx-auto md:max-w-[60%] ">
+        
             <div className="bg-gray-200 pt-1 pb-4 rounded-b-3xl sm:pb-2 ">
                 <div className="bg-white flex flex-col gap-2 mx-4 my-6 px-2 py-3  rounded-xl sm:gap-4">
                     <h1 className="text-xl font-semibold sm:text-2xl">{name}</h1>
@@ -68,7 +71,7 @@ const RestaurantPage = () => {
                     {return(
                         <div key={category.card.card.title}>
                                     
-                            <Link to={category.card.card.title.ItemCategory}><h1 className="text-white my-4 cursor-pointer font-thin ">{category.card.card.title}</h1> </Link>
+                            <h1 className="text-white my-4  font-thin ">{category.card.card.title}</h1>
                                     
                         </div> )          
                     }

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   useState  } from 'react';
 import {  useNavigate  } from 'react-router-dom';
 
-import { CITY_COORDINATES_API, CITY_RESTAURANTS_API, DEFAULT_LAT, DEFAULT_LNG } from '../../../utils/constants';
+import { CITY_COORDINATES_API, CITY_RESTAURANTS_API, DEFAULT_LAT, DEFAULT_LNG } from '../../../../utils/constants';
 //import { getCityRestaurantsData } from '../../../utils/hooks/getCItyRestaurantsData';
 
 

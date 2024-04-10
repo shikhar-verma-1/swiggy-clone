@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM  from 'react-dom/client';
-//import HeaderMain from './components/Header/HeaderMain';
-import SearchPageMobile from './components/SearchPage/SearchPageMobile';
-//import Body from './components/Body';
-import SetLocationMobile from './components/SetLocationPage/SetLocationMobile';
+
+import SearchPageMobile from './components/Header Components/SearchPage/SearchPageMobile';
+
+import SetLocationMobile from './components/Header Components/SetLocationPage/SetLocationMobile';
 import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
-//import SearchPage from './components/SearchPage/SearchPage';
+
 import { useMediaQuery } from "react-responsive";
 import HeaderMobile from './components/Header/HeaderMobile';
 import HeaderDesktop from './components/Header/HeaderDesktop';
-import UserPageMobile from './components/UserPage/UserPageMobile';
+import UserPageMobile from './components/Header Components/UserPage/UserPageMobile';
 import Body from './components/Body/Body';
 import RestaurantPage from './components/Body Components/Restaurant Page Components/RestaurantPage';
 

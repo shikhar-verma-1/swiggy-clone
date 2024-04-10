@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { ITEM_IMAGES_URL } from "../../../../utils/constants";
 
 const Items = ({itemsData}) =>{
-    console.log(itemsData);
+    
+
     
 
 
@@ -10,6 +12,7 @@ const Items = ({itemsData}) =>{
             
             <hr/>   
             {itemsData.map((item)=>(
+                
                 
                 <div key={item.card.info.id} className="py-2">
                     <div className="mx-4 flex items-center md:py-3">
@@ -24,11 +27,15 @@ const Items = ({itemsData}) =>{
                             <div className="flex items-center gap-1 text-sm md:text-lg"><img className="w-4 h-4 md:w-5 md:h-5" src="../../assets/star-rating.png"></img> {item.card.info.ratings.aggregatedRating.rating} - ({item.card.info.ratings.aggregatedRating.ratingCountV2 || 0})</div>
                             <p className="font-thin">{item.card.info.description}</p>
                         </div>
+                        
                         <div className="w-[40%] flex flex-col items-center py-4">
 
                             <div className="w-[140px] h-[140px] md:w-[210px] md:h-[180px] flex flex-col items-center relative">
-                                <img className="w-[100%] h-[97%] rounded-lg" src={ITEM_IMAGES_URL + item.card.info.imageId || "../../assets/generic-item.png"}/>
+                                
+                                <img className="w-[100%] h-[97%] rounded-lg"  src={ITEM_IMAGES_URL + item.card.info.imageId} />
+                                
                                 <button className=" bg-white border border-gray-300 w-[60%] pt-1 pb-2 md:py-2 md:mt-5 md:w-[70%] rounded-lg font-bold shadow-lg text-green-600 absolute top-3/4  cursor-pointer">ADD</button>
+                                
                             </div>
                             
                         </div>
