@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import useRestaurantData from "../../../../utils/hooks/useRestaurantData";
 import WOYMShimmer from "../../Shimmers/WOYMShimmer";
