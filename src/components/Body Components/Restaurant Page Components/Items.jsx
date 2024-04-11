@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { ITEM_IMAGES_URL } from "../../../../utils/constants";
 
+
 const Items = ({itemsData}) =>{
     
+    
+    
+    const[isClicked,setisClicked] = useState(false);
 
+    
+
+
+
+    
+
+    
     
 
 
@@ -33,8 +44,19 @@ const Items = ({itemsData}) =>{
                             <div className="w-[140px] h-[140px] md:w-[210px] md:h-[180px] flex flex-col items-center relative">
                                 
                                 <img className="w-[100%] h-[97%] rounded-lg"  src={ITEM_IMAGES_URL + item.card.info.imageId} />
-                                
-                                <button className=" bg-white border border-gray-300 w-[60%] pt-1 pb-2 md:py-2 md:mt-5 md:w-[70%] rounded-lg font-bold shadow-lg text-green-600 absolute top-3/4  cursor-pointer">ADD</button>
+                                <div className=" bg-white border border-gray-300 w-[60%] pt-1 pb-2 md:py-2 md:mt-5 md:w-[70%] rounded-lg text-center font-bold shadow-lg text-green-600 absolute top-3/4  cursor-pointer">
+                                    {
+                                        isClicked?
+                                        <div className="flex gap-4 justify-center">
+                                            <button>-</button>
+                                            <h1>1</h1>
+                                            <button>+</button>
+                                        </div>
+                                        :
+                                        <button>ADD</button>
+                                    }
+                                </div>  
+                               
                                 
                             </div>
                             

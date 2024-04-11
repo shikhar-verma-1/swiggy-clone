@@ -14,24 +14,26 @@ import Body from './components/Body/Body';
 import RestaurantPage from './components/Body Components/Restaurant Page Components/RestaurantPage';
 
 
+
 const AppLayout = () =>{
   const isMobile = useMediaQuery( {maxWidth:639} );
   return isMobile?
   (
+    
     <div>
       <HeaderMobile />
-      <Body />
-      
-      
-      
+      <Body />  
     </div>
+    
   )  
   :  
   (
+    
     <div>
       <HeaderDesktop />
       <Outlet /> 
     </div>
+    
   )
      
 };

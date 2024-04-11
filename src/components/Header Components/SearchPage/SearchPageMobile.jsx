@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 const SearchPageMobile =()=>{
     const navigate = useNavigate();
 
@@ -12,7 +12,6 @@ const SearchPageMobile =()=>{
     return(
         <div className="flex flex-col items-center my-4 px-4">
             
-           
             <FontAwesomeIcon onClick={navigate_To_Home} className="self-start" icon={faArrowLeft} />
             <h1 className="font-thin">Search for dishes & restaurants</h1>
             

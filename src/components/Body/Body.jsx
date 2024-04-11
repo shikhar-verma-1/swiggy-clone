@@ -27,7 +27,7 @@ const Body = () => {
         
         setWoymList(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
         setTopRestaurantChainsList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setCityRestaurantsList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setCityRestaurantsList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     
 
