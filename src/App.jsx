@@ -17,26 +17,17 @@ import RestaurantPage from './components/Body Components/Restaurant Page Compone
 
 const AppLayout = () =>{
   const isMobile = useMediaQuery( {maxWidth:639} );
-  return isMobile?
-  (
+  return (
     
-    <div>
-      <HeaderMobile />
-      <Body />  
-    </div>
-    
-  )  
-  :  
-  (
-    
-    <div>
-      <HeaderDesktop />
-      <Outlet /> 
-    </div>
-    
+      <div>
+        {isMobile? <HeaderMobile/> : <HeaderDesktop/>}
+        {isMobile? <Body/> : <Outlet/>}
+      </div>
+      
   )
-     
 };
+
+
 
 const appRouter = createBrowserRouter([
  

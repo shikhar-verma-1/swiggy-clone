@@ -7,17 +7,21 @@ const Items = ({itemsData}) =>{
     
     
     const[isClicked,setisClicked] = useState(false);
+    const [cart,setcart]=useState([]);
 
-    
+    const handleClick = (id) => {
 
-
-
-    
-
-    
-    
-
-
+        
+        for(let item of itemsData){
+            if(id===item.card.info.id){
+                setisClicked(true)
+            }
+        }
+        
+            
+        
+    };
+                                                                                                          
     return(
         <div>
             
@@ -53,7 +57,7 @@ const Items = ({itemsData}) =>{
                                             <button>+</button>
                                         </div>
                                         :
-                                        <button>ADD</button>
+                                        <button onClick={()=>handleClick(item.card.info.id)}>ADD</button>
                                     }
                                 </div>  
                                
@@ -69,11 +73,7 @@ const Items = ({itemsData}) =>{
                 </div>
             
             ))}
-
-                
-            
-            
-                
+      
         </div>
         
     )
